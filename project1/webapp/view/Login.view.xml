@@ -47,6 +47,14 @@
 			<Button width="150px" type="Ghost" text=
 				"Sign Up" press="handleNav"/>
 
+			<Input placeholder="Enter text"/>
+			<Input placeholder="Enter text" />
+			<Input placeholder="Enter text"/>
+			<Input placeholder="Enter text" />
+			 <Button width="150px" type="Emphasized"
+				text="Confirm"
+				press="handleNav" />
+
 			</Page>
 			<Page
 				id="p2"
@@ -70,6 +78,15 @@
 						value="p1" />
 				</customData>
 			</Button >
+<!-- form -->
+<Input placeholder="Enter text"/>
+			<Input placeholder="Enter text" />
+			<Input placeholder="Enter text"/>
+			<Input placeholder="Enter text" />
+			 <Button width="150px" type="Emphasized"
+				text="Confirm"
+				press="handleNav" />
+
 			</Page>
 			
 		</NavContainer>
