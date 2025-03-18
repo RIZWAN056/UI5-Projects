@@ -12,6 +12,9 @@
 		</headerContent>
 		<subHeader>
 			<OverflowToolbar>
+			<Button 
+				text="Excel Download"
+				press="onPressTemplateDownload"/>
 				<SearchField />
 			</OverflowToolbar>
 		</subHeader>
@@ -78,7 +81,7 @@
 						value="p1" />
 				</customData>
 			</Button >
-<!-- form -->
+
 <Input placeholder="Enter text"/>
 			<Input placeholder="Enter text" />
 			<Input placeholder="Enter text"/>
