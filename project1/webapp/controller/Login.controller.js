@@ -52,6 +52,10 @@ sap.ui.define([
 				const productsSH = wb.addWorksheet('Products', { properties: { tabColor: { argb: 'ADD8E6' } } });
 
 				// Define columns
+				bulkUploadTemplateSH.columns = [
+					{ header: 'Company', key: 'company', width: 10 }, 
+					{ header: 'Product Id', key: 'product', width: 10 }
+				]
 				companyNamesSH.columns = [
 					{ header: 'Company Code', key: 'code', width: 10 },
 					{ header: 'Company Name', key: 'name', width: 20 },
@@ -63,36 +67,36 @@ sap.ui.define([
 				];
 
 				// Track the Progress using a Dialog
-				
-					let progressDialog = new sap.m.Dialog({
-						title: "Generating Excel",
-						type: "Message",
-						content: new sap.m.VBox({
-							items: [
-								new sap.m.Text({ id: "progressText", text: "Processing sheet 0/2" }),
-								new sap.m.ProgressIndicator({
-									id: "progressBar",
-									width: "100%",
-									percentValue: 0,
-									displayValue: "0%",
-									showValue: true,
-									displayAnimation: true,
-									displayOnly:true
-								})
-							]
-						}),
-						endButton: new sap.m.Button({
-							text: "Cancel",
-							press: function () {
-								progressDialog.close();
-								return;
-							}
-						})
-					});
-					this.getView().addDependent(progressDialog);
-				
+
+				let progressDialog = new sap.m.Dialog({
+					title: "Generating Excel",
+					type: "Message",
+					content: new sap.m.VBox({
+						items: [
+							new sap.m.Text({ id: "progressText", text: "Processing sheet 0/2" }),
+							new sap.m.ProgressIndicator({
+								id: "progressBar",
+								width: "100%",
+								percentValue: 0,
+								displayValue: "0%",
+								showValue: true,
+								displayAnimation: true,
+								displayOnly: true
+							})
+						]
+					}),
+					endButton: new sap.m.Button({
+						text: "Cancel",
+						press: function () {
+							progressDialog.close();
+							return;
+						}
+					})
+				});
+				this.getView().addDependent(progressDialog);
+
 				this._progressDialog = await progressDialog.open();
-				
+
 				// Get Progress Components
 				let progressText = sap.ui.getCore().byId("progressText");
 				let progressBar = sap.ui.getCore().byId("progressBar");
@@ -129,7 +133,7 @@ sap.ui.define([
 				if (this._progressDialog) {
 					this._progressDialog.close();
 					this._progressDialog.destroy();
-				 }
+				}
 				console.error("Error generating Excel file:", error);
 				this.errorHandling(error);
 			}
