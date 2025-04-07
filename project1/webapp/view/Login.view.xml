@@ -1,60 +1,60 @@
 <mvc:View controllerName="project1.controller.Login"
-	
-		xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-		xmlns="sap.m"
-		xmlns:f="sap.f"
-		xmlns:l="sap.ui.layout"
-		xmlns:form="sap.ui.layout.form"
-		xmlns:card="sap.f.cards"
-		xmlns:core="sap.ui.core"
-		xmlns:field="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" height="100%">
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:card="sap.f.cards"
+	xmlns:core="sap.ui.core"
+	xmlns:field="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" height="100%">
 
-		<Page id="loginPage" class="login_background" showHeader="false" backgroundDesign="Transparent" showFooter="false">
-			<headerContent>
-				<Button icon="sap-icon://action" tooltip="Share" />
-			</headerContent>
-			<subHeader>
-				<OverflowToolbar>
-					<Button text="Excel Download" press="onPressTemplateDownload"/>
-					<SearchField />
-				</OverflowToolbar>
-			</subHeader>
-			<content>
-				<VBox height="100%" justifyContent="Center" alignItems="Center">
-					<items>
+	<Page id="loginPage" class="login_background" showHeader="false" backgroundDesign="Transparent" showFooter="false">
+		<headerContent>
+			<Button icon="sap-icon://action" tooltip="Share" />
+		</headerContent>
+		<subHeader>
+			<OverflowToolbar>
+				<Button text="Excel Download" press="onPressTemplateDownload"/>
+				<Button text ="Download Excel" press="downloadExcel"/>
+				<SearchField />
+			</OverflowToolbar>
+		</subHeader>
+		<content>
+			<VBox height="100%" justifyContent="Center" alignItems="Center">
+				<items>
 
-						<f:Card>
-							<f:content>
+					<f:Card>
+						<f:content>
 
-								<HBox class="sapUiSmallMargin" width="100%">
-									<VBox class="sapUiSmallMargin" width="50%">
-										<HBox>
-											<Button type="Ghost" text="Login" press="handleNav" />
-											<Button type="Emphasized" text="Sign Up" press="goToSignUp">
-												<layoutData>
-													<FlexItemData growFactor="1" />
-												</layoutData>
-											</Button>
-										</HBox>
-										<Input placeholder="Enter text"/>
-										<Input placeholder="Enter text" />
-										<Input placeholder="Enter text"/>
-										<Input placeholder="Enter text" />
-										<Button width="150px" type="Emphasized" text="Confirm" press="handleNav" />
-									</VBox>
+							<HBox class="sapUiSmallMargin" width="100%">
+								<VBox class="sapUiSmallMargin" width="50%">
+									<HBox>
+										<Button type="Ghost" text="Login" press="handleNav" />
+										<Button type="Emphasized" text="Sign Up" press="goToSignUp">
+											<layoutData>
+												<FlexItemData growFactor="1" />
+											</layoutData>
+										</Button>
+									</HBox>
+									<Input placeholder="Enter text"/>
+									<Input placeholder="Enter text" />
+									<Input placeholder="Enter text"/>
+									<Input placeholder="Enter text" />
+									<Button width="150px" type="Emphasized" text="Confirm" press="handleNav" />
+								</VBox>
 
-									<VBox class="sapUiSmallMargin" width="50%">
-										<Image width="10em" ariaDetails="detailsActiveImage" src="/project1/webapp/images/Admin.jpg" decorative="false" press="handleImage3Press" />
-									</VBox>
-								</HBox>
+								<VBox class="sapUiSmallMargin" width="50%">
+									<Image width="10em" ariaDetails="detailsActiveImage" src="/project1/webapp/images/Admin.jpg" decorative="false" press="handleImage3Press" />
+								</VBox>
+							</HBox>
 
 
-							</f:content>
-						</f:Card>
+						</f:content>
+					</f:Card>
 
-					</items>
+				</items>
 
-				</VBox>
-			</content>
-		</Page>
-	</mvc:View>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

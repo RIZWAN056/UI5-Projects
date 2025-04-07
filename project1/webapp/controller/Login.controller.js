@@ -235,6 +235,27 @@ sap.ui.define([
 		//end of Excel
 
 
+		downloadExcel: async function () {
+		fetch('http://localhost:8080/download/excel')
+        .then(response => {
+			if (!response.ok) {
+				throw new Error("Network response was not OK");
+			}
+			return response.blob();
+		})
+			.then(blob => {
+				const url = window.URL.createObjectURL(new Blob([blob]));
+				const link = document.createElement('a');
+				link.href = url;
+				link.setAttribute('download', 'example.xlsx');
+				document.body.appendChild(link);
+				link.click();
+				link.remove();
+			})
+			.catch(error => {
+				console.error("Error downloading Excel file:", error);
+			});
+	}
 
 
 
